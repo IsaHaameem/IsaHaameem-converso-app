@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversation - Converso</title>
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="conversation.css"> 
+</head>
+<body>
+    <div class="chat-container">
+        <header class="chat-header">
+            <a href="dashboard.html" class="back-link">&larr; Back to Dashboard</a>
+            <h3>Practice Conversation</h3>
+            <button id="end-session-btn" class="btn btn-secondary">End Session</button>
+        </header>
+        
+        <main class="chat-messages" id="chat-messages">
+            <div class="message ai-message">
+                <p>Hello! What would you like to talk about today?</p>
+            </div>
+        </main>
+
+        <footer class="chat-input-area">
+            <form id="chat-form">
+                <button type="button" id="mic-button" class="mic-button">🎙️</button>
+                <input type="text" id="message-input" placeholder="Type or speak your message..." required>
+                <button type="submit" class="send-button">&rarr;</button>
+            </form>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="conversation.js"></script> 
+</body>
+</html>

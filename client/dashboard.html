@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Converso</title>
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="dashboard-nav">
+            <a href="#" class="logo"><span>Ⓜ️</span> Converso</a>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Learn</a></li>
+                <li><a href="#">Practice</a></li>
+                <li><a href="#">Community</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="icon-button" aria-label="Notifications">🔔</button>
+                <img src="https://i.pravatar.cc/40" alt="User Avatar" class="avatar">
+                <button id="settings-btn" class="icon-button" aria-label="Settings">⚙️</button>
+                <button id="logout-button" class="btn btn-secondary">Logout</button>
+            </div>
+        </nav>
+
+        <main class="dashboard-grid">
+            <header class="welcome-header">
+                <h1>Welcome back, Sarah</h1>
+            </header>
+            
+            <section class="progress-card">
+                <div class="progress-info">
+                    <span>Level 3</span>
+                    <span>60%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-bar-fill" style="width: 60%;"></div>
+                </div>
+                <p id="progress-note" class="progress-note">Next level in 4 days</p>
+            </section>
+
+            <section class="stat-card">
+                <h3>Recent Conversations</h3>
+                <p id="recent-convos-stat" class="stat-value">3</p>
+            </section>
+
+            <section class="stat-card">
+                <h3>Words Learned</h3>
+                <p id="words-learned-stat" class="stat-value">250</p>
+            </section>
+            
+            <section class="stat-card">
+                <h3>Conversation Streak</h3>
+                <p id="streak-stat" class="stat-value">14 <span class="stat-unit">days</span></p>
+            </section>
+
+            <section class="subscription-card">
+                <div>
+                    <h3>Premium Subscription <span class="status-active">ACTIVE</span></h3>
+                    <p>Unlock all features and accelerate your learning.</p>
+                </div>
+                <a href="#" id="upgrade-btn" class="btn btn-secondary">Upgrade Now</a>
+            </section>
+
+            <section class="action-card">
+                <button id="start-conversation-btn" class="btn btn-primary btn-large">
+                    💬 Start Conversation
+                </button>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+.settings-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.settings-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+.settings-header .back-link { color: var(--text-muted); text-decoration: none; font-size: 1.5rem; }
+.settings-header h1 { margin: 0; font-size: 2.5rem; }
+
+.settings-form-container {
+    background-color: var(--card-dark);
+    padding: 32px;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+}
+
+.avatar-upload-section {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+.avatar-preview {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.hidden-file-input { display: none; }
+.form-hint { font-size: 0.85rem; color: var(--text-muted); margin-top: 8px; }
+
+.form-group {
+    margin-bottom: 24px;
+}
+.form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--input-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-light);
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+}
+.form-group input:disabled {
+    background-color: #475569;
+    cursor: not-allowed;
+}
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-actions {
+    border-top: 1px solid var(--border-color);
+    padding-top: 24px;
+    text-align: right;
+}

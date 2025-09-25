@@ -1,0 +1,107 @@
+/* --- Dashboard Specific Styles --- */
+.dashboard-container {
+    max-width: 1100px; /* Slightly adjusted width */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Navigation Bar */
+.dashboard-nav {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 32px; /* Increased gap */
+    margin: 0 auto;
+}
+.nav-links a { color: var(--text-muted); text-decoration: none; font-weight: 500; transition: color 0.2s ease-in-out; }
+.nav-links a:hover { color: var(--text-light); }
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px; /* Adjusted gap */
+}
+.icon-button { background: none; border: none; font-size: 1.5rem; color: var(--text-muted); cursor: pointer; transition: color 0.2s ease-in-out, transform 0.2s ease; }
+.icon-button:hover { color: var(--text-light); transform: scale(1.1); }
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--text-muted);
+    transition: border-color 0.2s ease;
+}
+.avatar:hover { border-color: var(--primary-blue); }
+
+/* Dashboard Grid Layout - UPDATED */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    grid-template-areas:
+        "header   header   header"
+        "progress progress progress"
+        "stat1    stat2    stat3"
+        "sub      sub      sub"
+        ".        action1  ."; /* This centers the action button */
+}
+
+/* Grid Area Assignments */
+.welcome-header { grid-area: header; }
+.progress-card { grid-area: progress; }
+.stat-card:nth-of-type(1) { grid-area: stat1; }
+.stat-card:nth-of-type(2) { grid-area: stat2; }
+.stat-card:nth-of-type(3) { grid-area: stat3; }
+.subscription-card { grid-area: sub; }
+.action-card { grid-area: action1; } /* Only one action card now */
+
+
+/* Card Styling - Polished */
+.welcome-header h1 { font-size: 2.25rem; margin: 0 0 20px; font-weight: 700; }
+
+.progress-card, .stat-card, .subscription-card {
+    background-color: var(--card-dark);
+    padding: 24px;
+    border-radius: 12px; /* Slightly smaller radius */
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.stat-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Progress Bar */
+.progress-info { display: flex; justify-content: space-between; margin-bottom: 12px; font-weight: 600; color: var(--text-light); }
+.progress-bar { width: 100%; background-color: var(--input-bg); border-radius: 8px; height: 12px; overflow: hidden; }
+.progress-bar-fill { height: 100%; background-image: var(--primary-gradient); border-radius: 8px; }
+.progress-note { margin: 12px 0 0; color: var(--text-muted); font-size: 0.9rem; text-align: right; }
+
+/* Stat Cards */
+.stat-card h3 { margin: 0 0 10px; color: var(--text-muted); font-size: 1rem; font-weight: 500; }
+.stat-value { font-size: 2.25rem; font-weight: 700; margin: 0; color: var(--text-light); }
+.stat-unit { font-size: 1.5rem; color: var(--text-muted); font-weight: 500;}
+
+/* Subscription Card */
+.subscription-card { display: flex; justify-content: space-between; align-items: center; }
+.status-active { background-color: #16A34A; color: white; font-size: 0.7rem; padding: 4px 8px; border-radius: 12px; vertical-align: middle; margin-left: 8px; font-weight: bold; }
+.subscription-card p { color: var(--text-muted); margin: 5px 0 0; }
+.subscription-card .btn { flex-shrink: 0; }
+
+/* Action Cards */
+.action-card { padding: 0; background: none; border: none; }
+.action-card .btn { width: 100%; height: 100%; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; gap: 10px; padding: 20px; } /* More padding */
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header" "progress" "stat1" "stat2" "stat3" "sub" "action1";
+    }
+}

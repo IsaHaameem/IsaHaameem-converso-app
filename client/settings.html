@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Converso</title>
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+    <div class="settings-container">
+        <header class="settings-header">
+            <a href="dashboard.html" class="back-link">&larr; Back to Dashboard</a>
+            <h1>Settings</h1>
+        </header>
+
+        <main class="settings-form-container">
+            <form id="settings-form">
+                <div class="avatar-upload-section">
+                    <img src="https://i.pravatar.cc/100" alt="User Avatar" id="avatar-preview" class="avatar-preview">
+                    <div>
+                        <label for="avatar-input" class="btn btn-secondary">Upload new picture</label>
+                        <input type="file" id="avatar-input" accept="image/png, image/jpeg" class="hidden-file-input">
+                        <p class="form-hint">PNG or JPG, max 2MB.</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Your username">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" disabled>
+                </div>
+
+                <div class="form-group">
+                    <label for="bio">Bio</label>
+                    <textarea id="bio" placeholder="Tell us a little about yourself..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" id="dob">
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </div>
+            </form>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="settings.js"></script>
+</body>
+</html>

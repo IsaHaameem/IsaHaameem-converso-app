@@ -1,0 +1,111 @@
+/* Add this at the very top of the file */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* --- CSS Variables for Colors --- */
+:root {
+    --bg-dark: #0F172A;
+    --card-dark: #1E293B;
+    --input-bg: #334155;
+    --primary-blue: #4F46E5;
+    --primary-gradient: linear-gradient(90deg, #4F46E5, #818CF8);
+    --text-light: #F1F5F9;
+    --text-muted: #94A3B8;
+    --border-color: #334155; /* Made border slightly brighter */
+}
+
+/* --- Global Base Styles --- */
+body {
+    font-family: 'Inter', sans-serif; /* Use the new professional font */
+    margin: 0;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    -webkit-font-smoothing: antialiased; /* Smoother font rendering */
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Shared Layout Styles --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.logo a {
+    color: var(--text-light);
+    text-decoration: none;
+}
+
+/* --- Shared Button Styles --- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border: 1px solid transparent; /* Added for consistent sizing */
+    border-radius: 8px;
+    font-weight: 600; /* Slightly bolder */
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px); /* Add a subtle lift on hover */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.btn-primary {
+    background-image: var(--primary-gradient);
+    color: white;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-light);
+}
+.btn-secondary:hover {
+    background-color: var(--input-bg);
+    border-color: var(--text-muted);
+}
+
+.btn-large {
+    font-size: 1.1rem;
+    padding: 15px 30px;
+}
+
+/* --- Shared Form Styles --- */
+.form-card {
+    background-color: var(--card-dark);
+    padding: 40px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 360px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+/* Add this to global.css */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo span {
+    display: inline-block;
+    background-image: var(--primary-gradient);
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    line-height: 1;
+}
