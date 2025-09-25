@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const fetch = require('node-fetch');
+const fetch = require('node-fetch'); 
 const { createClient } = require('@supabase/supabase-js');
 
 const app = express();
@@ -15,9 +15,10 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 app.use(cors());
 app.use(express.json());
 
-// --- AI Chat Endpoint (Using Groq) ---
+// --- AI Chat Endpoint (Using an External API) ---
 app.post('/chat', async (req, res) => {
-    const groqApiKey = process.env.GROQ_API_KEY;
+    // You will need to get an API key from the platform providing these models
+    const apiKey = process.env.GROQ_API_KEY; 
     
     const systemPrompt = {
         role: 'system',
@@ -30,23 +31,24 @@ app.post('/chat', async (req, res) => {
     const fullMessages = [systemPrompt, ...messages];
 
     try {
-        const groqResponse = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+        // You may need to change this URL to the correct one for your new provider
+        const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
             method: 'POST',
             headers: {
-                'Authorization': `Bearer ${groqApiKey}`,
+                'Authorization': `Bearer ${apiKey}`,
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
                 messages: fullMessages,
-                model: "llama3-8b-8192",
+                model: "llama-4-scout", // UPDATED MODEL
                 stream: true
             })
         });
 
-        groqResponse.body.pipe(res);
+        response.body.pipe(res);
 
     } catch (error) {
-        console.error('Error with Groq API:', error);
+        console.error('Error with API:', error);
         res.status(500).send('Error communicating with AI');
     }
 });
