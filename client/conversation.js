@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (!session) {
         window.location.href = 'login.html';
     }
-    resetChatUI(); // Start a fresh conversation
+    resetConversation(); 
 });
 
 // --- 5. Add a message to the UI ---
@@ -177,10 +177,13 @@ async function endCurrentConversation() {
         alert("There was an error processing your conversation. Please check the browser console.");
     }
     
-    resetChatUI();
+    resetConversation();
 }
 
-function resetChatUI() {
+function resetConversation() {
+    window.speechSynthesis.cancel();
+    if (recognition && isListening) recognition.stop();
+    
     chatMessages.innerHTML = ''; 
     const initialAIMessage = "Hello! What would you like to talk about today?";
     addMessage(initialAIMessage, 'ai');
