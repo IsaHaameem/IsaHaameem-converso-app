@@ -1,6 +1,7 @@
 // --- 1. Initialize Supabase ---
 const supabaseUrl = 'https://lgustmkqrzgkyesyfizh.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxndXN0bWtxcnpna3llc3lmaXpoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg0NTUxNDgsImV4cCI6MjA3NDAzMTE0OH0.EC_holDfG0UvhRgQl0Kj6CYeTLZpIWtXZqXeGVmFW00';
+// const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
 const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
 
 // --- Wait for the entire HTML document to be ready before running our scripts ---
